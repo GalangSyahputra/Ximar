@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #333;
+    color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 20px;
+    background: #222;
+    color: #fff;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-form input[type="text"] {
+    padding: 10px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #eee;
+    outline: none;
+    transition: border-color 0.3s;
+    margin-right: 10px;
+}
+
+.search-form input[type="text"]:focus {
+    border-color: #f39c12;
+}
+
+.search-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f39c12;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+    background-color: #e67e22;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.hamburger-label {
+    width: 70px;
+    height: 58px;
+    display: block;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.hamburger-label div {
+    width: 70px;
+    height: 6px;
+    background-color: #fff;
+    position: absolute;
+}
+
+.line1 {
+    transition: all .3s;
+}
+
+.line2 {
+    margin: 18px 0 0 0;
+    transition: 0.3s;
+}
+
+.line3 {
+    margin: 36px 0 0 0;
+    transition: 0.3s;
+}
+
+.menu-toggle:checked + .hamburger-label .line1 {
+    transform: rotate(35deg) scaleX(.55) translate(39px, -4.5px);
+    border-radius: 50px 50px 50px 0;
+}
+
+.menu-toggle:checked + .hamburger-label .line3 {
+    transform: rotate(-35deg) scaleX(.55) translate(39px, 4.5px);
+    border-radius: 0 50px 50px 50px;
+}
+
+.menu-toggle:checked + .hamburger-label .line2 {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    width: 45px;
+}
+
+.menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    padding-top: 80px;
+    text-align: center;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu li {
+    margin: 20px 0;
+}
+
+.menu a {
+    color: #fff;
+    font-size: 2rem;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: inline-block;
+    animation: sway 1s ease-in-out infinite;
+}
+
+.menu a:hover {
+    color: #f39c12;
+}
+
+.menu-toggle:checked ~ .menu {
+    display: block;
+}
+
+@keyframes sway {
+    0% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(-5px);
+    }
+}
